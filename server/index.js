@@ -4,9 +4,11 @@ import route from "./Routes/routes.js";
 
 const app = express();
 const PORT = 8000;
+const username = process.env.MONGO_USERNAME;
+const password = process.env.MONGO_PASSWORD;
 
 const URL =
-  "mongodb+srv://sameep:ZeVsZD1Gt5gTThC9@googlekeep.dfc7l.mongodb.net/GoogleKeep?retryWrites=true&w=majority";
+`mongodb+srv://${username}:${password}@googlekeep.dfc7l.mongodb.net/GoogleKeep?retryWrites=true&w=majority`;
 
 app.use("/" ,route) ;
 
@@ -21,7 +23,3 @@ mongoose
     console.log("Error :", error.message);
   });
 
-
-
-// mongodb+srv://sameep:ZeVsZD1Gt5gTThC9@googlekeep.dfc7l.mongodb.net/GoogleKeep?retryWrites=true&w=majority
-// ZeVsZD1Gt5gTThC9
